@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->boolean('takeaway')->default(0);
-            $table->unsignedInteger('status');
+            $table->timestamp('preparation_at')->nullable();
+            $table->timestamp('ready_at')->nullable();
+            $table->timestamp('delivered_at')->nullable();
+            $table->timestamp('canceled_at')->nullable();
             $table->timestamps();
         });
     }
