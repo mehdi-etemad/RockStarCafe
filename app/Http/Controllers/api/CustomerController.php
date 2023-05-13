@@ -32,6 +32,7 @@ class CustomerController extends Controller
         return response()->json($result);
     }
     public function addOrder(Request $request) {
+        $token = null;
         return response()->json($result);
     }
     public function getOrder(Request $request) {

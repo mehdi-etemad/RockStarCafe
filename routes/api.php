@@ -15,10 +15,10 @@ use App\Http\Controllers\api\CustomerController;
 |
 */
 Route::get('/menu',[CustomerController::Class, 'getMenu']);
-Route::get('/order',[CustomerController::Class, 'getOrder']);
-Route::post('/order',[CustomerController::Class, 'addOrder']);
-Route::get('/change',[CustomerController::Class, 'changeOrder']);
-Route::post('/cancel',[CustomerController::Class, 'cancelOrder']);
+Route::get('/order',[CustomerController::Class, 'getOrder'])->middleware('auth:sanctum');
+Route::post('/order',[CustomerController::Class, 'addOrder'])->middleware('auth:sanctum');
+Route::get('/change',[CustomerController::Class, 'changeOrder'])->middleware('auth:sanctum');
+Route::post('/cancel',[CustomerController::Class, 'cancelOrder'])->middleware('auth:sanctum');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

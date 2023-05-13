@@ -14,11 +14,7 @@ use App\Models\Option;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
-    //return 'Here';
-    //return Menu::all();
-    //return Menu::find(1)->option->values;
+    return view('welcome');
 });
-
 ?>
